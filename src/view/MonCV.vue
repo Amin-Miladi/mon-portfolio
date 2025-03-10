@@ -21,7 +21,7 @@
         <!-- Bouton vers le CV -->
         <div class="cv-button-container">
           <a
-            href="CV-alternance.pdf" 
+            href="public/CV-alternance.pdf"
             target="_blank"
             class="cv-button"
             rel="noopener noreferrer"
