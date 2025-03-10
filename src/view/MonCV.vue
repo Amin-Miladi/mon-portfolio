@@ -21,8 +21,7 @@
         <!-- Bouton vers le CV -->
         <div class="cv-button-container">
           <a
-            href="/AMIN (11).pdf"
-            target="_blank"
+            href="/CV-alternance.pdf"
             class="cv-button"
             rel="noopener noreferrer"
           >
