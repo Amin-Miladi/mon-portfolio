@@ -1,10 +1,8 @@
 <template>
   <div class="loader-overlay">
-    <!-- Conteneur de la barre de progression -->
     <div class="progress-container">
       <div class="progress-bar" :style="{ width: progress + '%' }"></div>
     </div>
-    <!-- Texte affichant le pourcentage -->
     <div class="progress-text">{{ progress }}%</div>
   </div>
 </template>
@@ -96,10 +94,22 @@ text-align: center;
 @media (max-width: 480px) {
 .progress-container {
   width: 95%; /* Réduire encore plus la largeur de la barre */
+  height: 15px; /* ✅ AJOUT : On affine un peu la barre pour les petits mobiles */
 }
 
 .progress-text {
   font-size: 1rem; /* Réduire encore la taille du texte */
 }
+}
+
+/* ✅ NOUVEL AJOUT : Pour les écrans très petits ou en paysage court */
+@media (max-height: 400px) {
+  .progress-container {
+    height: 10px;
+  }
+  .progress-text {
+    margin-top: 5px;
+    font-size: 0.9rem;
+  }
 }
 </style>

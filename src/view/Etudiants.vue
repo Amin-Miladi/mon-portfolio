@@ -5,7 +5,6 @@
       Récemment, dans le cadre d'un projet de création d'identité de marque en SAE, mon équipe et moi avons développé une marque de bière de luxe baptisée Mayel. Pour le logo, nous nous sommes inspirés des masques mayas, symboles de mystère et de tradition, ce qui confère à notre marque une image forte et authentique. Le nom Mayel, qui signifie "parfumer" en maya, reflète notre volonté d'offrir une expérience sensorielle unique à travers des saveurs raffinées et exotiques. Ce projet a renforcé mon intérêt pour la création visuelle et le développement de concepts innovants.
     </p>
 
-    <!-- Section des logos -->
     <div class="project-section">
       <img
         class="project-image"
@@ -26,7 +25,6 @@
       </p>
     </div>
 
-    <!-- Ajout des autres concepts de logos -->
     <div class="project-section">
       <img
         class="project-image"
@@ -40,7 +38,6 @@
       />
     </div>
 
-    <!-- Section du site internet -->
     <div class="project-section">
       <h2>Site Internet</h2>
       <p class="section-text">
@@ -53,7 +50,6 @@
       />
     </div>
 
-    <!-- Section publicité vidéo -->
     <div class="project-section">
       <h2>Publicité Vidéo</h2>
       <p class="section-text">
@@ -112,18 +108,20 @@ export default {
 
 .project-section {
   margin-bottom: 40px;
+  text-align: center; /* Assure que les titres h2 sont centrés */
 }
 
 .section-text {
   font-size: 1em;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 .project-image {
   width: 100%;
   max-width: 800px;
   display: block;
-  margin: 0 auto;
+  margin: 0 auto 15px; /* Ajout d'une petite marge en bas */
   border-radius: 8px;
 }
 
@@ -141,11 +139,12 @@ export default {
 
 @media (max-width: 768px) {
   .title {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
   .description {
     font-size: 1rem;
+    padding: 0 10px;
   }
 
   .project-section {
@@ -158,42 +157,48 @@ export default {
 
   .project-video {
     max-width: 100%;
+    height: 300px; /* ✅ Ajustement hauteur tablette */
   }
 
   .section-text {
     font-size: 0.9rem;
   }
 
-  /* Changer margin-top pour la version mobile */
+  /* ✅ Ajusté pour ne pas être trop bas par rapport au menu burger */
   .project-detail {
-    margin-top: 160px;
+    margin-top: 80px;
   }
 }
 
 @media (max-width: 480px) {
   .title {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
 
   .description {
     font-size: 0.9rem;
+    margin-bottom: 25px;
   }
 
   .project-section {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
   }
 
   .project-image {
     max-width: 100%;
-    max-height: 400px; /* Réduit la taille des images sur petits écrans */
+    height: auto; /* ✅ Auto pour garder le ratio sans écraser */
   }
 
   .project-video {
-    height: 350px; /* Réduit la taille de la vidéo */
+    height: 220px; /* ✅ Ajustement hauteur mobile portrait */
   }
 
   .section-text {
-    font-size: 0.8rem;
+    font-size: 0.85rem;
+  }
+  
+  h2 {
+    font-size: 1.2rem; /* ✅ Réduction des titres h2 */
   }
 }
 </style>

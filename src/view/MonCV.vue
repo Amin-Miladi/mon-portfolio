@@ -18,10 +18,9 @@
         <p>
           Dans ce portfolio, vous pourrez découvrir tous les projets que j’ai réalisés, que ce soit dans le cadre de mes études ou à titre personnel.
         </p>
-        <!-- Bouton vers le CV -->
         <div class="cv-button-container">
           <a
-            href="/AMIN (11).pdf"
+            href="/CV_stage_Amin_Miladi.pdf" 
             target="_blank"
             class="cv-button"
             rel="noopener noreferrer"
@@ -67,14 +66,14 @@ export default {
 }
 
 /* Image de profil */
-.cv-image img[data-v-54f8c68e] {
+.cv-image img {
   width: 200px;
   height: auto;
   -o-object-fit: cover;
   object-fit: cover;
   border-radius: 4px;
   border: 4px solid white;
-  margin-left: -30px; /* Déplace l'image plus vers la gauche */
+  margin-left: -30px; /* Déplace l'image plus vers la gauche sur PC */
 }
 
 /* Contenu du texte */
@@ -103,6 +102,7 @@ export default {
   transition: all 0.3s ease;
   margin-top: 60px; /* Espacement par rapport au texte */
   text-decoration: none; /* Supprime le soulignement */
+  display: inline-block; /* Garantit que le bouton respecte le padding */
 }
 
 .cv-button:hover {
@@ -116,50 +116,48 @@ export default {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .cv-section {
+    margin-top: 80px; /* ✅ Ajusté pour le menu burger */
+    padding: 20px;
+  }
+
   .cv-title {
-    font-size: 1.9rem; /* Réduction de la taille du titre */
+    font-size: 1.9rem;
   }
 
   .cv-container {
-    flex-direction: column; /* Empile les éléments sur les petits écrans */
-    gap: 30px; /* Augmenter l'écart entre l'image et le texte */
+    flex-direction: column; /* Empile l'image et le texte (Box verticale) */
+    gap: 30px; 
   }
 
-  .cv-image img[data-v-54f8c68e] {
-    width: 150px; /* Réduire la taille de l'image */
+  .cv-image img {
+    width: 180px; 
+    margin-left: 0; /* ✅ RÉPARÉ : On remet l'image au centre sur mobile */
   }
 
   .cv-content {
-    max-width: 80%; /* Augmenter la largeur du texte */
+    max-width: 100%; 
+    text-align: center; /* ✅ Centré pour une meilleure lecture sur mobile */
   }
 
   .cv-button {
-    font-size: 0.9rem; /* Réduire la taille du bouton */
-    padding: 8px 16px; /* Réduire la taille du bouton */
+    font-size: 1rem; 
+    padding: 12px 24px; /* ✅ Plus large pour le doigt */
+    margin-top: 30px;
   }
 }
 
 @media (max-width: 480px) {
-  /* Ajustements pour les smartphones */
   .cv-title {
-    font-size: 1.5rem; /* Réduire encore la taille du titre */
+    font-size: 1.6rem;
   }
 
-  .cv-container {
-    gap: 20px; /* Réduire l'écart entre les éléments */
-  }
-
-  .cv-image img[data-v-54f8c68e] {
-    width: 120px; /* Réduire la taille de l'image */
+  .cv-image img {
+    width: 150px;
   }
 
   .cv-content {
-    max-width: 90%; /* Augmenter la largeur du texte pour s'adapter à l'écran */
-  }
-
-  .cv-button {
-    font-size: 0.8rem; /* Réduire la taille du bouton */
-    padding: 6px 12px; /* Réduire la taille du bouton */
+    font-size: 0.9rem;
   }
 }
 </style>

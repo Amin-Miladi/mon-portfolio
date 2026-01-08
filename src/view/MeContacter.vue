@@ -185,53 +185,46 @@ p {
 @media (max-width: 768px) {
   /* Ajustements pour les tablettes et les écrans plus petits */
   .contact-container {
-    padding: 30px; /* Moins d'espace pour les petits écrans */
-    margin-top: 160px; /* Marge de 160px en version mobile */
+    padding: 30px; 
+    margin-top: 80px; /* ✅ AJUSTÉ : On réduit le margin-top pour ne pas avoir un trop grand vide */
   }
 
   h1 {
-    font-size: 2rem; /* Réduction de la taille du titre */
+    font-size: 2rem; 
   }
 
-  .description {
-    font-size: 1rem; /* Ajustement de la taille du texte */
+  p {
+    font-size: 1rem; 
   }
 
   .contact-form {
     width: 100%;
-    max-width: 90%; /* Réduit la largeur du formulaire */
+    max-width: 100%; /* ✅ On utilise toute la largeur dispo sur mobile */
   }
 
   .input-row {
-    flex-direction: column; /* Aligne les champs nom et prénom en colonne */
-    gap: 15px; /* Espacement entre les champs */
+    flex-direction: column; /* Aligne les champs nom et prénom en colonne (Box empilée) */
+    gap: 15px; 
   }
 
   .submit-button {
-    padding: 12px; /* Réduction de la taille du bouton */
+    padding: 15px; /* ✅ On garde une bonne taille pour le clic tactile */
   }
 }
 
 @media (max-width: 480px) {
   .contact-container {
-    padding: 20px; /* Encore moins d'espace pour les très petits écrans */
+    padding: 15px;
+    margin-top: 70px;
   }
 
   .input-field,
   .textarea-field {
-    font-size: 0.9rem; /* Réduction de la taille de la police */
-  }
-
-  .submit-button {
-    font-size: 1rem; /* Taille de texte plus petite pour le bouton */
+    font-size: 0.95rem; /* Un peu plus lisible sur mobile */
   }
 
   h1 {
-    font-size: 1.5rem; /* Réduction du titre */
-  }
-
-  .description {
-    font-size: 0.9rem; /* Réduction du texte */
+    font-size: 1.7rem;
   }
 }
 </style>

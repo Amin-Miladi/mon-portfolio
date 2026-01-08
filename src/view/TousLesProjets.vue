@@ -3,17 +3,20 @@
     <h1>Tous les Projets</h1>
     <p>Explorez mes travaux réalisés dans divers domaines.</p>
 
-    <!-- Menu des catégories -->
     <nav class="categories">
-      <span @click="filterCategory('all')" :class="{ active: selectedCategory === 'all' }">Travaux étudiants</span> |
-      <span @click="filterCategory('manga')" :class="{ active: selectedCategory === 'manga' }">Projet création manga GENESIS ZERO</span> |
-      <span @click="filterCategory('youtube')" :class="{ active: selectedCategory === 'youtube' }">Création vidéo YouTube</span> |
-      <span @click="filterCategory('design')" :class="{ active: selectedCategory === 'design' }">Design graphique & Illustrations</span> |
-      <span @click="filterCategory('montage')" :class="{ active: selectedCategory === 'montage' }">Montage vidéo</span> |
+      <span @click="filterCategory('all')" :class="{ active: selectedCategory === 'all' }">Travaux étudiants</span> 
+      <span class="separator">|</span>
+      <span @click="filterCategory('manga')" :class="{ active: selectedCategory === 'manga' }">Projet création manga GENESIS ZERO</span> 
+      <span class="separator">|</span>
+      <span @click="filterCategory('youtube')" :class="{ active: selectedCategory === 'youtube' }">Création vidéo YouTube</span> 
+      <span class="separator">|</span>
+      <span @click="filterCategory('design')" :class="{ active: selectedCategory === 'design' }">Design graphique & Illustrations</span> 
+      <span class="separator">|</span>
+      <span @click="filterCategory('montage')" :class="{ active: selectedCategory === 'montage' }">Montage vidéo</span> 
+      <span class="separator">|</span>
       <span @click="filterCategory('motion')" :class="{ active: selectedCategory === 'motion' }">Animation & Motion design</span>
     </nav>
 
-    <!-- Grille des projets -->
     <div class="projects-grid">
       <div
         class="project-card"
@@ -113,13 +116,13 @@ export default {
 
 /* Titre principal */
 h1 {
-  font-size: 2.2rem; /* Réduit la taille du titre de 5px */
+  font-size: 2.2rem; 
   margin-bottom: 20px;
 }
 
 /* Description */
 p {
-  font-size: 1.1rem; /* Réduit la taille de la description de 5px */
+  font-size: 1.1rem; 
   margin-bottom: 30px;
 }
 
@@ -127,6 +130,7 @@ p {
 .categories {
   margin-bottom: 30px;
   font-size: 1rem;
+  line-height: 1.8rem; /* ✅ AJOUT : Meilleur espacement vertical pour les retours à la ligne */
 }
 
 .categories span {
@@ -175,37 +179,50 @@ p {
 
 /* Détails des projets */
 .project-details h3 {
-  font-size: 1.3rem; /* Réduction de la taille du titre des projets */
+  font-size: 1.3rem; 
   margin: 10px 0;
 }
 
 .project-details p {
-  font-size: 0.9rem; /* Réduction de la taille de la description des projets */
+  font-size: 0.9rem; 
   color: #ccc;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
   .projects-container {
-    padding: 30px;
+    padding: 20px;
+    margin-top: 80px; /* ✅ AJUSTÉ : Aligné sur les autres pages pour le menu burger */
   }
+
+  .categories {
+    display: flex; /* ✅ AJOUT : Flexbox pour mieux ranger les catégories */
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    font-size: 0.95rem;
+  }
+
+  .separator {
+    display: none; /* ✅ CACHÉ : Les barres horizontales gênent sur petit écran */
+  }
+
   h1 {
-    font-size: 1.9rem; /* Réduire la taille du titre pour les petits écrans */
-  }
-  .project-details h3 {
-    font-size: 1.1rem; /* Réduire la taille du titre des projets */
+    font-size: 1.8rem; 
   }
 }
 
 @media (max-width: 480px) {
-  .projects-container {
-    padding: 20px;
+  .projects-grid {
+    grid-template-columns: 1fr; /* ✅ BOX : Une seule colonne pour plus de clarté */
   }
+
   h1 {
-    font-size: 1.4rem; /* Réduction de la taille du titre pour les plus petits écrans */
+    font-size: 1.5rem; 
   }
+
   .project-details h3 {
-    font-size: 1rem; /* Réduire encore la taille du titre des projets */
+    font-size: 1.1rem; 
   }
 }
 </style>

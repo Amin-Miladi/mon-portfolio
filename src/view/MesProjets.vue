@@ -3,17 +3,20 @@
     <h1>Tous les Projets</h1>
     <p>Explorez mes travaux réalisés dans divers domaines.</p>
 
-    <!-- Menu des catégories -->
     <nav class="categories">
-      <span @click="filterCategory('all')" :class="{ active: selectedCategory === 'all' }">Travaux étudiants</span> |
-      <span @click="filterCategory('manga')" :class="{ active: selectedCategory === 'manga' }">Projet création manga GENESIS ZERO</span> |
-      <span @click="filterCategory('youtube')" :class="{ active: selectedCategory === 'youtube' }">Création vidéo YouTube</span> |
-      <span @click="filterCategory('design')" :class="{ active: selectedCategory === 'design' }">Design graphique & Illustrations</span> |
-      <span @click="filterCategory('montage')" :class="{ active: selectedCategory === 'montage' }">Montage vidéo</span> |
+      <span @click="filterCategory('all')" :class="{ active: selectedCategory === 'all' }">Travaux étudiants</span> 
+      <span class="separator">|</span>
+      <span @click="filterCategory('manga')" :class="{ active: selectedCategory === 'manga' }">Projet création manga GENESIS ZERO</span> 
+      <span class="separator">|</span>
+      <span @click="filterCategory('youtube')" :class="{ active: selectedCategory === 'youtube' }">Création vidéo YouTube</span> 
+      <span class="separator">|</span>
+      <span @click="filterCategory('design')" :class="{ active: selectedCategory === 'design' }">Design graphique & Illustrations</span> 
+      <span class="separator">|</span>
+      <span @click="filterCategory('montage')" :class="{ active: selectedCategory === 'montage' }">Montage vidéo</span> 
+      <span class="separator">|</span>
       <span @click="filterCategory('motion')" :class="{ active: selectedCategory === 'motion' }">Animation & Motion design</span>
     </nav>
 
-    <!-- Section des projets -->
     <div class="projects-grid">
       <router-link
         v-for="project in filteredProjects"
@@ -114,7 +117,8 @@ export default {
 /* Menu des catégories */
 .categories {
   margin-bottom: 30px;
-  font-size: 1.35rem; /* Réduction de la taille de la police */
+  font-size: 1.35rem;
+  line-height: 2rem;
 }
 
 .categories span {
@@ -137,7 +141,7 @@ export default {
   flex-wrap: wrap;
   justify-content: center;
   gap: 70px;
-  margin-top: 120px;
+  margin-top: 50px; /* ✅ RÉDUIT : Évite un trop grand vide */
 }
 
 /* Carte des projets */
@@ -146,8 +150,8 @@ export default {
   background-position: center;
   border-radius: 10px;
   overflow: hidden;
-  flex: 1 1 calc(33.333% - 20px);
-  max-width: calc(33.333% - 20px);
+  flex: 1 1 calc(33.333% - 70px); /* ✅ AJUSTÉ : Correspond au gap */
+  max-width: calc(33.333% - 70px);
   height: 200px;
   position: relative;
   transition: transform 0.3s, box-shadow 0.3s;
@@ -158,7 +162,6 @@ export default {
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.6);
 }
 
-/* Overlay sombre au hover */
 .project::before {
   content: "";
   position: absolute;
@@ -175,7 +178,6 @@ export default {
   opacity: 1;
 }
 
-/* Informations sur le projet */
 .project-info {
   position: absolute;
   top: 50%;
@@ -185,6 +187,7 @@ export default {
   opacity: 0;
   transition: opacity 0.3s;
   z-index: 2;
+  width: 90%;
 }
 
 .project:hover .project-info {
@@ -202,45 +205,54 @@ export default {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
-  /* Ajustements pour les tablettes et les écrans plus petits */
-  .projects-grid {
-    gap: 40px; /* Réduire l'écart entre les cartes */
-  }
-
+@media (max-width: 1024px) {
   .project {
-    flex: 1 1 calc(50% - 20px); /* Deux projets par ligne sur petits écrans */
-    max-width: calc(50% - 20px);
-    height: 250px; /* Augmenter la hauteur des projets */
+    flex: 1 1 calc(50% - 40px);
+    max-width: calc(50% - 40px);
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-container {
+    padding: 20px;
+    margin-top: 80px; /* ✅ AJUSTÉ : Menu burger */
   }
 
   .categories {
-    font-size: 1.2rem; /* Réduire la taille des catégories pour s'adapter aux petits écrans */
+    font-size: 1.1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .separator {
+    display: none; /* ✅ SUPPRIMÉ : Les barres verticales gênent sur mobile */
+  }
+
+  .projects-grid {
+    gap: 30px;
+    margin-top: 30px;
+  }
+
+  .project {
+    flex: 1 1 100%; /* ✅ UN SEUL PROJET : Pour que ce soit lisible */
+    max-width: 100%;
+    height: 220px;
+  }
+  
+  /* ✅ VISIBILITÉ : Sur mobile, on affiche les infos directement car pas de hover */
+  .project::before {
+    opacity: 0.5;
+  }
+  .project-info {
+    opacity: 1;
   }
 }
 
 @media (max-width: 480px) {
-  /* Ajustements pour les smartphones */
-  .projects-grid {
-    gap: 20px; /* Espacement réduit */
-  }
-
-  .project {
-    flex: 1 1 calc(100% - 20px); /* Un projet par ligne */
-    max-width: 100%;
-    height: 200px; /* Ajuster la hauteur */
-  }
-
-  .categories {
-    font-size: 1rem; /* Réduire encore la taille du texte */
-  }
-
-  .project-info h3 {
-    font-size: 1.2rem; /* Réduire la taille du titre */
-  }
-
-  .project-info p {
-    font-size: 0.9rem; /* Réduire la taille de la description */
-  }
+  h1 { font-size: 1.8rem; }
+  .categories { font-size: 0.9rem; }
+  .project-info h3 { font-size: 1.2rem; }
 }
 </style>

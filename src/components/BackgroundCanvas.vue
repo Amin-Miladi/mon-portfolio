@@ -1,11 +1,9 @@
 <template>
   <div>
     <canvas ref="backgroundCanvas" class="background-canvas"></canvas>
-    <!-- Nom en haut à gauche -->
     <div class="top-left">
       Amin Miladi
     </div>
-    <!-- Texte "Portfolio" au centre uniquement sur la page d'accueil -->
     <div v-show="isHomePage" class="centered-text">
       Portfolio
     </div>
@@ -30,8 +28,23 @@ export default {
     this.initBackground();
     // Détermine si on est sur la page d'accueil au premier rendu
     this.isHomePage = this.$route.path === "/";
+    
+    // ✅ AJOUT : Redimensionner le canvas si on tourne le téléphone
+    window.addEventListener('resize', this.handleResize);
+  },
+  // ✅ AJOUT : Nettoyer l'événement quand on quitte la page
+  beforeUnmount() {
+    window.removeEventListener('resize', this.handleResize);
   },
   methods: {
+    // ✅ AJOUT : Fonction pour recalculer la taille sur mobile
+    handleResize() {
+      const canvas = this.$refs.backgroundCanvas;
+      if (canvas) {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      }
+    },
     initBackground() {
       const canvas = this.$refs.backgroundCanvas;
       const ctx = canvas.getContext("2d");
@@ -128,31 +141,32 @@ export default {
   font-size: 3rem;
   font-weight: bold;
   text-align: center;
+  width: 90%; /* ✅ AJOUT : évite que le texte touche les bords sur mobile */
 }
 
 /* Media query pour les petits écrans */
 @media (max-width: 768px) {
   .top-left {
-    font-size: 1.2rem; /* Réduire la taille de la police pour les petits écrans */
-    top: 10px; /* Réduire l'espace par rapport au haut */
-    left: 10px; /* Réduire l'espace par rapport à la gauche */
+    font-size: 1.2rem;
+    top: 15px; /* ✅ AJUSTEMENT : Un peu plus d'espace pour ne pas coller tout en haut */
+    left: 15px;
   }
 
   .centered-text {
-    font-size: 2rem; /* Réduire la taille de la police du texte "Portfolio" */
+    font-size: 2rem;
   }
 }
 
 /* Media query pour les très petits écrans (mobiles) */
 @media (max-width: 480px) {
   .top-left {
-    font-size: 1rem; /* Réduire encore la taille de la police pour les petits écrans */
-    top: 5px;
-    left: 5px;
+    font-size: 1rem;
+    top: 10px;
+    left: 10px;
   }
 
   .centered-text {
-    font-size: 1.5rem; /* Réduire la taille de la police du texte "Portfolio" */
+    font-size: 1.8rem; /* ✅ AJUSTEMENT : Un peu plus grand que 1.5 pour rester lisible */
   }
 }
 </style>

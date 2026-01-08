@@ -19,13 +19,47 @@
       ></iframe>
       <iframe
         class="montage-video"
+        src="https://drive.google.com/file/d/1qcYjWLo18mgoQGoTUMdl3gRIM7KUOZcn/preview"
+        frameborder="0"
+        allow="autoplay; encrypted-media"
+        allowfullscreen
+      ></iframe>
+      <iframe
+        class="montage-video"
         src="https://drive.google.com/file/d/1hRNuKlj7ilmOFFlMZOJ8TIAsECu3s68R/preview"
         frameborder="0"
         allow="autoplay; encrypted-media"
         allowfullscreen
       ></iframe>
+      <iframe
+        class="montage-video"
+        src="https://drive.google.com/file/d/1OePGDenOMYrtQCQ1DyfL4wEFp0ojFjAH/preview"
+        frameborder="0"
+        allow="autoplay; encrypted-media"
+        allowfullscreen
+      ></iframe>
+      <iframe
+        class="montage-video"
+        src="https://drive.google.com/file/d/1bimlmCGqn42xI5aC8tAt8M5ak_7vLMt6/preview"
+        frameborder="0"
+        allow="autoplay; encrypted-media"
+        allowfullscreen
+      ></iframe>
+      <iframe
+        class="montage-video"
+        src="https://drive.google.com/file/d/1CszpKPEFedO_m-va9jXggdpj14z7-hKg/preview"
+        frameborder="0"
+        allow="autoplay; encrypted-media"
+        allowfullscreen
+      ></iframe>
+      <iframe
+        class="montage-video"
+        src="https://drive.google.com/file/d/1qIyebNPBCebeXbFMiJgU8y5YnLOPXphWw/preview"
+        frameborder="0"
+        allow="autoplay; encrypted-media"
+        allowfullscreen
+      ></iframe>
     </div>
-    <!-- Nouvelle vidéo ajoutée ici -->
     <div class="extra-video-container">
       <iframe
         class="montage-video"
@@ -81,32 +115,38 @@ export default {
   display: flex;
   justify-content: center;
   gap: 20px;
+  flex-wrap: wrap; /* ✅ AJOUTÉ : Permet l'empilement sur mobile */
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .project-detail {
+    margin-top: 80px; /* ✅ AJUSTÉ : Évite le vide sous le menu burger */
+    padding: 15px;
+  }
+
   .video-container {
-    gap: 15px; /* Réduire l'espace entre les vidéos */
+    gap: 15px;
   }
 
   .montage-video {
-    max-width: 100%; /* Adapter les vidéos à la largeur de l'écran */
-    height: 250px; /* Ajuster la hauteur pour un meilleur rendu */
+    max-width: 100%;
+    height: 250px; /* Taille adaptée pour mobile */
   }
 
   .extra-video-container {
-    gap: 15px; /* Réduire l'espace entre les vidéos supplémentaires */
-  }
-
-  .project-detail {
-    margin-top: 160px; /* Margin-top ajusté pour version mobile */
+    gap: 15px;
+    margin-top: 20px; /* Réduit un peu l'écart */
   }
 }
 
 @media (max-width: 480px) {
   .montage-video {
-    max-width: 100%; /* Adapter encore mieux la vidéo à la taille de l'écran */
-    height: 200px; /* Réduire la hauteur pour les petits écrans */
+    height: 200px; /* Ratio optimisé pour petits smartphones */
+  }
+  
+  h1 {
+    font-size: 1.8rem;
   }
 }
 </style>

@@ -27,8 +27,24 @@ export default {
           title: "Animation Vidéo 1",
         },
         {
+          link: "https://drive.google.com/file/d/1EGUgep7AEQJu5hFwiVEIxqd_CCH4bKE-/preview",
+          title: "Animation Vidéo 1",
+        },
+         {
+          link: "https://drive.google.com/file/d/10vBneT9P7e5M14FHG_5AETlMBAeABy8U/preview",
+          title: "Animation Vidéo 1",
+        },
+            {
+          link: "https://drive.google.com/file/d/1RRoxIWDUSBUNGqMYVnOdKUERjyJ4-IHF/preview",
+          title: "Animation Vidéo 1",
+        },
+        {
           link: "https://drive.google.com/file/d/10KynPYkbTSWVmJ6G0x6IhkzH6eOcoMhy/preview",
           title: "Animation Vidéo 2",
+        },
+            {
+          link: "https://drive.google.com/file/d/1bt0r3LxYostb3N-DKClaRJ4z91f4loiO/preview",
+          title: "Animation Vidéo 1",
         },
         {
           link: "https://drive.google.com/file/d/1cz1XBLTXWVw9e1tiYnwMxy2p6t0J2KOp/preview",
@@ -108,15 +124,19 @@ p {
   }
 
   .project-detail {
-    margin-top: 160px; /* Margin-top ajusté pour version mobile */
+    margin-top: 80px; /* ✅ AJUSTEMENT : On réduit le margin-top pour laisser de la place au menu burger */
   }
 
   .video-grid {
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Réduit la largeur minimale des vidéos */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* ✅ AJUSTEMENT : On réduit le minmax pour éviter que la box sorte de l'écran */
   }
 
   .video-title {
     font-size: 1rem; /* Réduit la taille des titres */
+  }
+
+  h1 {
+    font-size: 1.5rem; /* ✅ AJUSTEMENT : Texte plus petit sur mobile */
   }
 }
 
@@ -124,10 +144,11 @@ p {
 @media (max-width: 480px) {
   .project-detail {
     padding: 10px; /* Réduit la marge interne sur les très petits écrans */
+    margin-top: 70px; /* ✅ AJUSTEMENT : Encore un peu moins pour le mobile */
   }
 
   .video-embed {
-    height: 200px; /* Réduit encore la hauteur de l'iframe sur les petits écrans */
+    height: 180px; /* ✅ AJUSTEMENT : Hauteur optimisée pour petit mobile */
   }
 
   .video-grid {
@@ -136,6 +157,10 @@ p {
 
   .video-title {
     font-size: 0.9rem; /* Réduit la taille des titres encore plus */
+  }
+
+  h1 {
+    font-size: 1.2rem; /* ✅ AJUSTEMENT : Texte encore plus petit */
   }
 }
 </style>
