@@ -19,117 +19,97 @@
 
 <script>
 export default {
-name: 'AppFooter',
+  name: 'AppFooter',
 };
 </script>
 
 <style scoped>
 /* Style pour le footer */
 .footer {
-<<<<<<< HEAD
-position: relative; /* ✅ PLUS FIXE : le footer reste en bas du contenu */
-bottom: auto; /* ✅ désactive le collage en bas */
-left: auto; /* ✅ désactive l’alignement forcé */
-right: auto; /* ✅ désactive l’alignement forcé */
-=======
-position: fixed; /* Fixé en bas de la fenêtre */
-bottom: 10px; /* Distance par rapport au bas */
-left: 0; /* Aligné à gauche */
-right: 0; /* Aligné à droite */
->>>>>>> 34ecdf10ad483a665fdf95ae555ae54e0eec5502
-margin: 0;
-padding: 0;
-font-size: 12px; /* Taille réduite du texte */
-color: white; /* Texte blanc */
-font-family: 'Futura', sans-serif; /* Police FUTURA */
-display: flex;
-justify-content: space-between; /* Espace entre le texte et les icônes */
-align-items: center; /* Centrage vertical du contenu */
-<<<<<<< HEAD
-padding: 15px 20px; /* ✅ un peu d'air pour éviter que ça colle */
-width: 100%;
-box-sizing: border-box;
-=======
-padding: 0 20px; /* Ajoute un peu d'espace de chaque côté */
->>>>>>> 34ecdf10ad483a665fdf95ae555ae54e0eec5502
+  position: relative; /* ✅ Le footer suit le contenu */
+  bottom: auto;
+  left: auto;
+  right: auto;
+  margin: 0;
+  font-size: 12px;
+  color: white;
+  font-family: 'Futura', sans-serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 /* Style pour les icônes des réseaux sociaux */
 .social-icons {
-display: flex;
-gap: 20px; /* Espacement entre les icônes */
+  display: flex;
+  gap: 20px;
 }
 
 .social-icons a {
-color: white; /* Icônes blanches */
-font-size: 20px; /* Taille des icônes */
-text-decoration: none; /* Enlever le soulignement */
-transition: color 0.3s ease;
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 .social-icons a:hover {
-color: #ddd; /* Couleur au survol des icônes */
+  color: #ddd;
 }
 
 /* Media query pour les petits écrans */
 @media (max-width: 768px) {
-.footer {
-  flex-direction: column; /* Disposition verticale pour les petits écrans */
-  align-items: center; /* Centrer le contenu horizontalement */
-  text-align: center; /* Centrer le texte */
-<<<<<<< HEAD
-  padding: 15px 15px; /* ✅ un peu plus de confort */
-  /* AJOUT : Empêche le footer de se bloquer mal sur mobile */
-  position: static; 
-=======
-  padding: 10px 15px; /* Réduire les marges */
->>>>>>> 34ecdf10ad483a665fdf95ae555ae54e0eec5502
-}
+  .footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 15px 15px;
+    position: static; 
+  }
 
-.social-icons {
-  gap: 15px; /* Réduire l'espacement entre les icônes */
-  margin-top: 10px; /* Ajouter un peu d'espace au-dessus des icônes */
-}
+  .social-icons {
+    gap: 15px;
+    margin-top: 10px;
+  }
 
-.social-icons a {
-  font-size: 18px; /* Réduire la taille des icônes */
-}
+  .social-icons a {
+    font-size: 18px;
+  }
 
-.footer p {
-  font-size: 14px; /* Réduire la taille du texte pour les petits écrans */
-}
+  .footer p {
+    font-size: 14px;
+  }
 }
 
 /* Media query pour les très petits écrans (mobile portrait) */
 @media (max-width: 480px) {
-.social-icons {
-  gap: 10px; /* Espacement encore plus réduit entre les icônes */
+  .social-icons {
+    gap: 10px;
+  }
+
+  .footer p {
+    font-size: 12px;
+  }
+
+  .social-icons a {
+    font-size: 16px;
+  }
 }
 
-.footer p {
-  font-size: 12px; /* Réduire encore plus la taille du texte */
-}
-
-.social-icons a {
-  font-size: 16px; /* Réduire la taille des icônes */
-}
-<<<<<<< HEAD
-}
-
-/* AJOUT SÉCURITÉ POUR LE FOOTER BLOQUÉ */
+/* SÉCURITÉ POUR LES ÉCRANS COURTS */
 @media screen and (max-height: 600px) {
   .footer {
     position: relative;
     margin-top: 20px;
   }
-=======
->>>>>>> 34ecdf10ad483a665fdf95ae555ae54e0eec5502
 }
 
-/* --- NOUVEL AJOUT RESPONSIVE POUR AJUSTEMENT TEXTE --- */
+/* AJUSTEMENT TEXTE ÉCRANS TRÈS ÉTROITS */
 @media (max-width: 350px) {
   .footer p {
-    font-size: 10px; /* Adaptation pour les écrans très étroits */
+    font-size: 10px;
   }
 }
 </style>
