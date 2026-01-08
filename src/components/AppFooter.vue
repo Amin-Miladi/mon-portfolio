@@ -26,10 +26,17 @@ name: 'AppFooter',
 <style scoped>
 /* Style pour le footer */
 .footer {
+<<<<<<< HEAD
 position: relative; /* ✅ PLUS FIXE : le footer reste en bas du contenu */
 bottom: auto; /* ✅ désactive le collage en bas */
 left: auto; /* ✅ désactive l’alignement forcé */
 right: auto; /* ✅ désactive l’alignement forcé */
+=======
+position: fixed; /* Fixé en bas de la fenêtre */
+bottom: 10px; /* Distance par rapport au bas */
+left: 0; /* Aligné à gauche */
+right: 0; /* Aligné à droite */
+>>>>>>> 34ecdf10ad483a665fdf95ae555ae54e0eec5502
 margin: 0;
 padding: 0;
 font-size: 12px; /* Taille réduite du texte */
@@ -38,9 +45,13 @@ font-family: 'Futura', sans-serif; /* Police FUTURA */
 display: flex;
 justify-content: space-between; /* Espace entre le texte et les icônes */
 align-items: center; /* Centrage vertical du contenu */
+<<<<<<< HEAD
 padding: 15px 20px; /* ✅ un peu d'air pour éviter que ça colle */
 width: 100%;
 box-sizing: border-box;
+=======
+padding: 0 20px; /* Ajoute un peu d'espace de chaque côté */
+>>>>>>> 34ecdf10ad483a665fdf95ae555ae54e0eec5502
 }
 
 /* Style pour les icônes des réseaux sociaux */
@@ -66,9 +77,13 @@ color: #ddd; /* Couleur au survol des icônes */
   flex-direction: column; /* Disposition verticale pour les petits écrans */
   align-items: center; /* Centrer le contenu horizontalement */
   text-align: center; /* Centrer le texte */
+<<<<<<< HEAD
   padding: 15px 15px; /* ✅ un peu plus de confort */
   /* AJOUT : Empêche le footer de se bloquer mal sur mobile */
   position: static; 
+=======
+  padding: 10px 15px; /* Réduire les marges */
+>>>>>>> 34ecdf10ad483a665fdf95ae555ae54e0eec5502
 }
 
 .social-icons {
@@ -98,6 +113,7 @@ color: #ddd; /* Couleur au survol des icônes */
 .social-icons a {
   font-size: 16px; /* Réduire la taille des icônes */
 }
+<<<<<<< HEAD
 }
 
 /* AJOUT SÉCURITÉ POUR LE FOOTER BLOQUÉ */
@@ -106,6 +122,8 @@ color: #ddd; /* Couleur au survol des icônes */
     position: relative;
     margin-top: 20px;
   }
+=======
+>>>>>>> 34ecdf10ad483a665fdf95ae555ae54e0eec5502
 }
 
 /* --- NOUVEL AJOUT RESPONSIVE POUR AJUSTEMENT TEXTE --- */
