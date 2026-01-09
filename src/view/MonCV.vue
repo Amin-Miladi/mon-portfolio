@@ -20,7 +20,7 @@
         </p>
         <div class="cv-button-container">
           <a
-            href="/CV_stage_Amin_Miladi.pdf" 
+            href="/CV_Amin_Miladi_stage.pdf"
             target="_blank"
             class="cv-button"
             rel="noopener noreferrer"

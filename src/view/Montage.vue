@@ -52,13 +52,7 @@
         allow="autoplay; encrypted-media"
         allowfullscreen
       ></iframe>
-      <iframe
-        class="montage-video"
-        src="https://drive.google.com/file/d/1qIyebNPBCebeXbFMiJgU8y5YnLOPXphWw/preview"
-        frameborder="0"
-        allow="autoplay; encrypted-media"
-        allowfullscreen
-      ></iframe>
+      
     </div>
     <div class="extra-video-container">
       <iframe
