@@ -1,0 +1,24 @@
+# 1. REDIRECTION (Indispensable pour éviter les erreurs 404 de ton routeur Vue)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# 2. EN-TÊTES DE SÉCURITÉ ET PERFORMANCE ULTRA-PUISSANTS (Boost SEO & Mobile)
+[[headers]]
+  for = "/*"
+  [headers.values]
+    # Indique à Google que le site est ultra-sécurisé (Excellent pour le classement)
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    
+    # Politique de sécurité du contenu (Autorise tes vidéos Google Drive et YouTube à se charger proprement)
+    Content-Security-Policy = "frame-src 'self' https://drive.google.com https://www.youtube.com;"
+
+# 3. MISE EN CACHE AGRESSIVE DES COMPOSANTS GRAPHIQUES (Pour un chargement mobile instantané)
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
